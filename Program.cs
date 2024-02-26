@@ -24,7 +24,7 @@ namespace HomeWork_6
                 return array; 
             }
             for (int i = 0; i < array.Length; i++)
-                if (array[i] == value) 
+                if (array[i].ToUpper() == value.ToUpper()) 
                 {
                     Console.WriteLine($"Элемент \"{value}\" уже присутствует в массиве под номером {i+1}") ;
                     return array; 
