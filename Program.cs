@@ -42,6 +42,22 @@ namespace HomeWork_6
             return array;
         }
 
+        /// <summary>
+        /// Метод складывания двумерных массивов
+        /// </summary>
+        /// <param name="array1">Входной массив1</param>
+        /// <param name="array2">Входной массив2</param>
+        /// <returns>Возвращает итоговый массив либо NULL</returns>
+        private static double[,] ArrayAdder(double[,] array1, double[,] array2)
+        {
+            if (array1 == null || array2 == null) return  null;
+            double[,] resultArr = new double[array1.GetLength(0),array1.GetLength(1)];
+            for (int i = 0; i<resultArr.GetLength(0); i++)
+                for (int j = 0; j < resultArr.GetLength(1) ; j++)
+                    resultArr[i,j] = array1[i, j] + array2[i,j];
+                    return resultArr;
+        }
+
 
         static void Main(string[] args)
         {
@@ -210,11 +226,14 @@ namespace HomeWork_6
                         Console.Write($"{secondArray[i,j]}\t");
                     Console.WriteLine();
                 }
+
+                double [,] resultArray = ArrayAdder(firstArray, secondArray);
+                
                 Console.WriteLine("Result array");
                 for (int i = 0; i < rowCount; i++)
                 {
                     for (int j = 0; j < columnCount; j++)
-                        Console.Write($"{firstArray[i,j]+secondArray[i,j]}\t");
+                        Console.Write($"{resultArray[i,j]}\t");
                     Console.WriteLine();
                 }
 
